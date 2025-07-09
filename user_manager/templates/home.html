@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h1>Welcome to User Manager</h1>
+  <p>This is the home page of your Django user management project.</p>
+  {% if user.is_authenticated %}
+    <p>Hello, {{ user.username }}! <a href="/accounts/profile/">View Profile</a> | <a href="/accounts/logout/">Logout</a></p>
+  {% else %}
+    <p><a href="/accounts/login/">Login</a> | <a href="/accounts/register/">Register</a></p>
+  {% endif %}
+{% endblock %}

@@ -55,7 +55,7 @@ ROOT_URLCONF = 'user_manager.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'user_manager' / 'templates'],  # Added templates directory
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -117,6 +117,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
@@ -133,3 +134,17 @@ DEFAULT_FROM_EMAIL = 'noreply@example.com'
 # EMAIL_USE_TLS = True
 # EMAIL_HOST_USER = 'your_email@example.com'
 # EMAIL_HOST_PASSWORD = 'your_email_password'
+
+# Twilio SMS settings (add your real credentials here)
+TWILIO_ACCOUNT_SID = 'AC9384eb16afe177363b60850bbbe64c42'
+TWILIO_AUTH_TOKEN = 'b2eb13191912341bfdc5540285207156'
+TWILIO_PHONE_NUMBER = 'your_twilio_phone_number'  # Replace with your Twilio phone number
+
+# SMTP email settings (add your real credentials here)
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'yvonnewambugu20@gmail.com'
+EMAIL_HOST_PASSWORD = 'nehsjugrnkkcvszl'
+DEFAULT_FROM_EMAIL = 'yvonnewambugu20@gmail.com'

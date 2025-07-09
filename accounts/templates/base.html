@@ -5,9 +5,9 @@
 </head>
 <body>
     {% if user.is_authenticated %}
-        <p>Welcome, {{ user.username }} | <a href="/accounts/profile/">Profile</a> | <a href="/admin/">Admin</a></p>
+        <p>Welcome, {{ user.username }} | <a href="/accounts/dashboard/">Dashboard</a> | <a href="/accounts/profile/">Profile</a> | <a href="/admin/">Admin</a> | <a href="/accounts/logout/">Logout</a></p>
     {% else %}
-        <p><a href="/accounts/register/">Register</a></p>
+        <p><a href="/accounts/login/">Login</a> | <a href="/accounts/register/">Register</a></p>
     {% endif %}
     <hr>
     {% block content %}{% endblock %}
