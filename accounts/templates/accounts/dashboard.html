@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="dashboard-container">
+    <h2>Dashboard</h2>
+    <p>Welcome, {{ user.username }}!</p>
+    <ul>
+        <li><a href="/accounts/profile/">View/Edit Profile</a></li>
+        <li><a href="/accounts/password_change/">Change Password</a></li>
+        <li><a href="/admin/">Admin Panel</a></li>
+        <li><a href="/accounts/logout/">Logout</a></li>
+    </ul>
+</div>
+{% endblock %}
