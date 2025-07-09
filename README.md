@@ -31,3 +31,4 @@ This is a Django project with custom user account functionality, including:
 
 ## GitHub
 - Project is hosted at: https://github.com/yvonne20865/user-manager
+
