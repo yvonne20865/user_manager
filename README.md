@@ -29,5 +29,12 @@ This is a Django project with custom user account functionality, including:
 - By default, emails are printed to the console for development.
 - To use SMTP, update the email settings in `user_manager/settings.py`.
 
+- ## screenshots
+  ![Screenshot 2025-07-09 153026](https://github.com/user-attachments/assets/2e2ae63a-c30b-405c-8503-e9cac32cbb11)
+  ![Screenshot 2025-07-09 152956](https://github.com/user-attachments/assets/3754e7ed-bf5e-4446-ac4a-ebb672fad4d5)
+
+  
+
+
 ## GitHub
 - Project is hosted at: https://github.com/yvonne20865/user-manager
