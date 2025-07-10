@@ -55,7 +55,7 @@ ROOT_URLCONF = 'user_manager.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'user_manager' / 'templates'],  # Added templates directory
+        'DIRS': [BASE_DIR / 'templates'],  # Add your templates directory here
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -148,3 +148,5 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'yvonnewambugu20@gmail.com'
 EMAIL_HOST_PASSWORD = 'nehsjugrnkkcvszl'
 DEFAULT_FROM_EMAIL = 'yvonnewambugu20@gmail.com'
+
+LOGIN_URL = '/login/'

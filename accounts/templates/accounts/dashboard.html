@@ -1,13 +1,44 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="dashboard-container">
-    <h2>Dashboard</h2>
-    <p>Welcome, {{ user.username }}!</p>
-    <ul>
-        <li><a href="/accounts/profile/">View/Edit Profile</a></li>
-        <li><a href="/accounts/password_change/">Change Password</a></li>
-        <li><a href="/admin/">Admin Panel</a></li>
-        <li><a href="/accounts/logout/">Logout</a></li>
+<style>
+  .dashboard-bg {
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+    border-radius: 20px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    padding: 2rem 2.5rem;
+    margin-top: 2rem;
+    color: #333;
+  }
+  .dashboard-list li {
+    margin: 1rem 0;
+    font-size: 1.2rem;
+  }
+  .dashboard-list a {
+    text-decoration: none;
+    color: #fff;
+    background: #6a82fb;
+    padding: 0.5rem 1.2rem;
+    border-radius: 8px;
+    transition: background 0.2s;
+    box-shadow: 0 2px 8px rgba(106,130,251,0.1);
+  }
+  .dashboard-list a:hover {
+    background: #fc5c7d;
+  }
+  .dashboard-icon {
+    margin-right: 0.7rem;
+    font-size: 1.3rem;
+    vertical-align: middle;
+  }
+</style>
+<div class="dashboard-bg">
+    <h2 class="mb-4">🌈 Dashboard</h2>
+    <p class="lead">Welcome, <strong>{{ user.username }}</strong>!</p>
+    <ul class="dashboard-list list-unstyled">
+        <li><span class="dashboard-icon">👤</span><a href="/profile/">View/Edit Profile</a></li>
+        <li><span class="dashboard-icon">🔑</span><a href="/password_change/">Change Password</a></li>
+        <li><span class="dashboard-icon">🛠️</span><a href="/admin/">Admin Panel</a></li>
+        <li><span class="dashboard-icon">🚪</span><a href="/logout/">Logout</a></li>
     </ul>
 </div>
 {% endblock %}

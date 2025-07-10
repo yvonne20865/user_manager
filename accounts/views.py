@@ -13,7 +13,7 @@ from django.conf import settings
 import random
 from .models import CustomUser
 from .utils import send_sms
-from django.urls import reverse
+from django.contrib.auth.decorators import login_required
 
 def register(request):
     if request.method == 'POST':
@@ -29,13 +29,13 @@ def register(request):
             subject = 'Activate Your Account'
             uid = urlsafe_base64_encode(force_bytes(user.pk))
             token = default_token_generator.make_token(user)
-            activation_link = f"http://{current_site.domain}/accounts/activate/{uid}/{token}/"
+            activation_link = f"{request.scheme}://{request.get_host()}/accounts/activate/{uid}/{token}/"
             message = render_to_string('accounts/activation_email.html', {
                 'user': user,
                 'activation_link': activation_link,
             })
             send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, [user.email])
-            return redirect('activate', uidb64=uid, token=token)
+            return render(request, 'accounts/activation_success.html')
     else:
         form = CustomUserCreationForm()
     return render(request, 'accounts/register.html', {'form': form})
@@ -83,3 +83,7 @@ def profile(request):
     else:
         form = CustomUserChangeForm(instance=request.user)
     return render(request, 'accounts/profile.html', {'form': form})
+
+@login_required
+def dashboard(request):
+    return render(request, 'accounts/dashboard.html')
